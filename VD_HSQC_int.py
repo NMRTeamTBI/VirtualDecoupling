@@ -1,6 +1,44 @@
+import os, sys, importlib
+from tkinter import * #required.
+from tkinter import messagebox #for messagebox.
+
+################################################################
+# Test for missing librairies 
+################################################################
+if sys.argv[1] == "test":
+    libfn = os.path.normpath(os.path.join(sys.argv[2],"vd_hsqc_lib.txt"))
+    txt = ""
+    modules = ["numpy","matplotlib","nmrglue","pandas","tkinter","tqdm",'Blabla']
+    for modname in modules:
+        try:
+            globals()[modname] = importlib.import_module(modname)
+            txt += "\nLibrary installed : "+str(modname) 
+        except ImportError as e:
+            main = Tk()
+            str_var = StringVar()
+            #Message Function
+            label = Message( main, textvariable=str_var, 
+                relief=RAISED,width=200)
+   
+            # The size of the text determines
+            # the size of the messagebox
+            str_var.set(str(modname)+" is missing") 
+            label.pack()
+            main.mainloop()
+
+            # App = Tk() #required.
+            # App.withdraw() #for hide window.
+            
+            # messagebox.showerror("Error", "Hello World!")
+            txt += "\nLibrary missing : "+str(modname) 
+    libf = open(libfn, 'w')
+    libf.write(txt)
+    libf.close()
+    exit()
+################################################################
+
 import numpy as np
 import nmrglue as ng
-import os, sys
 import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -9,9 +47,8 @@ from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from tqdm import tqdm
 from tkinter import *
-import importlib
 
-# add comment
+
 # https://stackoverflow.com/questions/58367251/how-can-i-store-the-data-of-my-tkinter-entries-into-a-dataframe-to-later-export
 
 def find_nearest(array, value):
@@ -262,28 +299,6 @@ def extract_1d(data, location, axis):
     s = [slice(v, v + 1) for v in location]
     s[axis] = slice(None, None)
     return np.atleast_1d(np.squeeze(data[tuple(s)]))
-
-################################################################
-# Test for missing librairies 
-################################################################
-if sys.argv[1] == "test":
-    libfn = os.path.normpath(os.path.join(sys.argv[2],"vd_hsqc_lib.txt"))
-    txt = ""
-    modules = ["numpy","matplotlib","nmrglue","pandas","tkinter","tqdm"]
-    for modname in modules:
-        try:
-            globals()[modname] = importlib.import_module(modname)
-            txt += "\nLibrary installed : "+str(modname) 
-        except ImportError as e:
-            print(str(modname)+"is missing")
-            txt += "\nLibrary missing : "+str(modname) 
-
-    libf = open(libfn, 'w')
-    libf.write(txt)
-    libf.close()
-    exit()
-################################################################
-
 
 topspin_dic = {
     'Path': str(sys.argv[1]),

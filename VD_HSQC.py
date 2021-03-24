@@ -57,7 +57,7 @@ def writeOpt(options):
   optf.close()
 
 def parseOpt(options):
-	if options["python_path"] != "" and not os.path.isfile(options["python_path"]):
+	if options["python_path"] != "python" and not os.path.isfile(options["python_path"]):
 	  ERRMSG(message = "Python path not found.", title="Error", details=None, modal=1)
 	  EXIT()
 	return(options)
@@ -88,7 +88,7 @@ current_time = now.strftime("%H:%M:%S")
 
 #######################################################
 # default parameters
-opt_ini = {"python_path":"", "script_path":"/opt/topspin4.0.8/exp/stan/nmr/py/"}
+opt_ini = {"python_path":"python", "script_path":str(os.path.dirname(sys.argv[0]))}
 # load user-defined parameters (default values are used if none declared)
 options = initialize(opt_ini) 
 python_env = options["python_path"]
@@ -99,16 +99,13 @@ if "--opt" in sys.argv:
     modifyOpt(options)
     EXIT()
 
-print(options["python_path"])
-EXIT()
-Python_path 
 Analysis_Script_Path = os.path.normpath(os.path.join(options["script_path"],"VD_HSQC_int.py"))
 
 #######################################################
 # check if all python dependencies are available for the analysis script
 if "--test" in sys.argv:
 #     cmd = "python /opt/topspin4.0.8/exp/stan/nmr/py/user/VD_HSQC_int.py %s %s"  % ('test', options["script_path"])
-    cmd = "python "+str(Analysis_Script_Path)+" %s %s"  % ('test', options["script_path"])
+    cmd = str(os.path.normpath(os.path(options["python_path"])))+" "+str(Analysis_Script_Path)+" %s %s"  % ('test', options["script_path"])
     subprocess.Popen(cmd, shell=True).wait()
     EXIT()
 
@@ -251,7 +248,7 @@ Dummy_DataSet       = dummy_expno                 #5
 Dummy_procno        = dummy_procno                #6
 
 print("Start Analysis Script")
-cmd = "python "+str(Analysis_Script_Path)+" %s %s %s %s %s %s %s %s %s %s %s %s %s"  % (Path, Data_Folder, InPhase_DataSet, AntiPhase_DataSet, Dummy_DataSet, Dummy_procno, Wdw_ppm[0], Wdw_ppm[1], Wdw_ppm[2], Wdw_ppm[3], pp_th, Box_pts[0], Box_pts[1])
+cmd = tr(os.path.normpath(os.path(options["python_path"])))+" "+str(Analysis_Script_Path)+" %s %s %s %s %s %s %s %s %s %s %s %s %s"  % (Path, Data_Folder, InPhase_DataSet, AntiPhase_DataSet, Dummy_DataSet, Dummy_procno, Wdw_ppm[0], Wdw_ppm[1], Wdw_ppm[2], Wdw_ppm[3], pp_th, Box_pts[0], Box_pts[1])
 subprocess.Popen(cmd, shell=True).wait()
 print('End Analysis Script')
 EXIT()
