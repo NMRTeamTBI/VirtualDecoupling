@@ -1,0 +1,11 @@
+##TITLE= Parameter file, TopSpin 3.6.2
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 1	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= ead17
+$$ 2021-02-09 15:51:09.544 +0100  ead17@CZC02583BQ
+$$ /opt/nmrdata/data/ead17/nmr/8GC_dextrandp5/6/pdata/1/assocs
+$$ process /opt/topspin3.6.2/prog/mod/dirdata
+##$MULTDISP= </opt/topspin3.5pl7/data/glippens/nmr/8SD_lanthipeptide/10/pdata/1>
+##END=

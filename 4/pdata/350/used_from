@@ -1,0 +1,16 @@
+##TITLE= Parameter file, TopSpin 4.0.8
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 1	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= cyrilcharlier
+$$ 2021-02-10 13:30:15.295 +0100  cyrilcharlier@Cyrils-MacBook-Pro.local
+$$ /opt/topspin4.0.8/data/8GC_dextrandp5/4/pdata/350/used_from
+$$ process /opt/topspin4.0.8/prog/mod/mvrow
+##$CUREXP= <row>
+##$DATPATH= </opt/topspin4.0.8/data>
+##$EXPNO= 4
+##$NAME= <8GC_dextrandp5>
+##$PROCNO= 1
+##$PROCNO2= 350
+##END=

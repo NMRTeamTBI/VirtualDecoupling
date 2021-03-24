@@ -8,7 +8,7 @@ from tkinter import messagebox #for messagebox.
 if sys.argv[1] == "test":
     libfn = os.path.normpath(os.path.join(sys.argv[2],"vd_hsqc_lib.txt"))
     txt = ""
-    modules = ["numpy","matplotlib","nmrglue","pandas","tkinter","tqdm",'Blabla']
+    modules = ["numpy","matplotlib","nmrglue","pandas","tkinter","tqdm"]
     for modname in modules:
         try:
             globals()[modname] = importlib.import_module(modname)

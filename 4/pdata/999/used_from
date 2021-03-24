@@ -1,0 +1,16 @@
+##TITLE= Parameter file, TopSpin 3.6.2
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 3	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= ead17
+$$ 2021-02-09 17:21:14.037 +0100  ead17@CZC02583BQ
+$$ /opt/nmrdata/data/ead17/nmr/8GC_dextrandp5/4/pdata/999/used_from
+$$ process /opt/topspin3.6.2/prog/mod/proc1d
+##$CUREXP= <ser>
+##$DATPATH= </opt/nmrdata/data/ead17/nmr>
+##$EXPNO= 4
+##$NAME= <8GC_dextrandp5>
+##$PROCNO= 1
+##$PROCNO2= 1
+##END=

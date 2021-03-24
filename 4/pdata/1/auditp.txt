@@ -1,0 +1,23 @@
+##TITLE= Audit trail, TopSpin 4.0.8
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= cyrilcharlier
+$$ /opt/topspin4.0.8/data/8GC_dextrandp5/4/pdata/1/auditp.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2021-02-09 19:28:17.474 +0100>,<ead17>,<CZC02583BQ>,<go4>,<TopSpin 3.6.2>,
+      <created by zg
+	started at 2021-02-09 17:18:50.006 +0100,
+	POWCHK enabled, PULCHK disabled,
+       configuration hash MD5:
+       64 E9 FF 6C 24 EE 0B B8 B9 A7 54 98 C5 C7 BC 83
+       data hash MD5: 16K * 512
+       CA 89 9E 62 DC 18 07 2D 48 86 DA 46 DE D6 AC 25>)
+(   2,<2021-03-24 11:06:36.866 +0100>,<cyrilcharlier>,<Cyrils-MacBook-Pro.local>,<proc2d>,<TopSpin 4.0.8>,
+      <Start of raw data processing
+       xfb F2: SI = 4K WDW = 4 SSB = 3 FT_mod = 6 PKNL = 1 PHC0 = 295.4485 PHC1 = 17.31146 F1: SI = 1K WDW = 4 SSB = 2 FT_mod = 6 FCOR = 0.5 PHC0 = -5.160156 PHC1 = 6
+       data hash MD5: 4K * 1K
+       37 58 1B 0D 43 B6 07 17 98 BF ED 82 1B A0 48 DB>)
+##END=
+
+$$ hash MD5
+$$ 69 6E 4A BB 40 43 FC 1B 4F 5D BB B4 D2 D7 61 18
