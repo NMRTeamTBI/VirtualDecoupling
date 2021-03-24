@@ -9,8 +9,8 @@
 ###############
 # Changes log #
 ###############
-#		v0.1 (26/01/20)
-#			-   initial script
+#        v0.1 (26/01/20)
+#            -   initial script
 #       v0.2 (01/02/20)
 #           -   Perform Peak picking on the inphase dataset 
 #       v0.3 (05/02/20)
@@ -32,22 +32,22 @@ from datetime import *
 import importlib
 
 def initialize(options):
-	try:
-		options = readOpt(options)
-	except:
-		writeOpt(options)
-	return(options)
+    try:
+        options = readOpt(options)
+    except:
+        writeOpt(options)
+    return(options)
 
 def readOpt(options):
-	optfn = os.path.normpath(os.path.join(os.path.dirname(sys.argv[0]), "vd_hsqc_path.txt"))
-	optf = open(optfn, 'r')
-	for l in optf.readlines():
-		li = l.strip("\n").split("\t")
-		if li[0] in options.keys():
-		  options[li[0]] = li[1]
-	optf.close()
-	options = parseOpt(options)
-	return(options)
+    optfn = os.path.normpath(os.path.join(os.path.dirname(sys.argv[0]), "vd_hsqc_path.txt"))
+    optf = open(optfn, 'r')
+    for l in optf.readlines():
+        li = l.strip("\n").split("\t")
+        if li[0] in options.keys():
+          options[li[0]] = li[1]
+    optf.close()
+    options = parseOpt(options)
+    return(options)
 
 def writeOpt(options):
   optfn = os.path.normpath(os.path.join(os.path.dirname(sys.argv[0]), "vd_hsqc_path.txt"))
@@ -57,10 +57,10 @@ def writeOpt(options):
   optf.close()
 
 def parseOpt(options):
-	if options["python_path"] != "python" and not os.path.isfile(options["python_path"]):
-	  ERRMSG(message = "Python path not found.", title="Error", details=None, modal=1)
-	  EXIT()
-	return(options)
+    if options["python_path"] != "python" and not os.path.isfile(options["python_path"]):
+      ERRMSG(message = "Python path not found.", title="Error", details=None, modal=1)
+      EXIT()
+    return(options)
 
 def modifyOpt(options):
     optold = initialize(options)
@@ -105,7 +105,7 @@ Analysis_Script_Path = os.path.normpath(os.path.join(options["script_path"],"VD_
 # check if all python dependencies are available for the analysis script
 if "--test" in sys.argv:
 #     cmd = "python /opt/topspin4.0.8/exp/stan/nmr/py/user/VD_HSQC_int.py %s %s"  % ('test', options["script_path"])
-    cmd = str(os.path.normpath(os.path(options["python_path"])))+" "+str(Analysis_Script_Path)+" %s %s"  % ('test', options["script_path"])
+    cmd = str(os.path.normpath(options["python_path"]))+" "+str(Analysis_Script_Path)+" %s %s"  % ('test', options["script_path"])
     subprocess.Popen(cmd, shell=True).wait()
     EXIT()
 
@@ -248,7 +248,7 @@ Dummy_DataSet       = dummy_expno                 #5
 Dummy_procno        = dummy_procno                #6
 
 print("Start Analysis Script")
-cmd = tr(os.path.normpath(os.path(options["python_path"])))+" "+str(Analysis_Script_Path)+" %s %s %s %s %s %s %s %s %s %s %s %s %s"  % (Path, Data_Folder, InPhase_DataSet, AntiPhase_DataSet, Dummy_DataSet, Dummy_procno, Wdw_ppm[0], Wdw_ppm[1], Wdw_ppm[2], Wdw_ppm[3], pp_th, Box_pts[0], Box_pts[1])
+cmd = tr(os.path.normpath(options["python_path"]))+" "+str(Analysis_Script_Path)+" %s %s %s %s %s %s %s %s %s %s %s %s %s"  % (Path, Data_Folder, InPhase_DataSet, AntiPhase_DataSet, Dummy_DataSet, Dummy_procno, Wdw_ppm[0], Wdw_ppm[1], Wdw_ppm[2], Wdw_ppm[3], pp_th, Box_pts[0], Box_pts[1])
 subprocess.Popen(cmd, shell=True).wait()
 print('End Analysis Script')
 EXIT()
