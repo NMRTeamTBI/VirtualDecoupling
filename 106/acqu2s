@@ -1,0 +1,24 @@
+##TITLE= Parameter file, TopSpin 3.6.2
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 258	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= ead17
+$$ 2021-02-11 20:56:04.553 +0100  ead17@CZC02583BQ
+$$ /opt/nmrdata/data/ead17/nmr/8GC_dextrandp5/106/acqu2s
+$$ process /opt/topspin3.6.2/prog/mod/go4
+##$ACQT0= 0
+##$BF1= 201.192849
+##$FnILOOP= 0
+##$FnMODE= 6
+##$NUC1= <13C>
+##$NusJSP= 0
+##$NusT2= 1
+##$NusTD= 256
+##$O1= 16095.4279199927
+##$ProjAngle= 0
+##$SFO1= 201.20894442792
+##$SW= 60.0236471610577
+##$SW_h= 12077.2946859903
+##$TD= 256
+##END=

@@ -1,0 +1,18 @@
+##TITLE= Audit trail, TopSpin 3.6.2
+##JCAMPDX= 5.01
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= ead17
+$$ /opt/nmrdata/data/ead17/nmr/8GC_dextrandp5/106/audita.txt
+##AUDIT TRAIL=  $$ (NUMBER, WHEN, WHO, WHERE, PROCESS, VERSION, WHAT)
+(   1,<2021-02-11 20:56:05.298 +0100>,<ead17>,<CZC02583BQ>,<go4>,<TopSpin 3.6.2>,
+      <created by zg
+	started at 2021-02-11 19:32:52.562 +0100,
+	POWCHK enabled, PULCHK disabled,
+       configuration hash MD5:
+       64 E9 FF 6C 24 EE 0B B8 B9 A7 54 98 C5 C7 BC 83
+       data hash MD5: 16K * 256
+       FD 1D 36 73 08 EF DC 7B 40 E6 0D B9 1F F7 12 1E>)
+##END=
+
+$$ hash MD5
+$$ 24 35 48 71 4E 1E B7 ED 8D D5 0E 2B BD 74 55 09
