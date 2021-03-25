@@ -124,7 +124,7 @@ inputs = INPUT_DIALOG("Virtual Decoupling",\
 "Please make sure that you New ExpNo does not correspond to an experimental dataset \n",
 # "\n",
 # "New ExpNo : ExpNo that will contain the resulting spectra ",
-["Data Directory","InPhase ExpNo ", "AntiPhase ExpNo", "New ExpNo ", "First ProcNo ", "Chemical shift(s) in ppm","Comment (Title)", "nc_proc","Detection threshold","Points Shifting"], [str(current_dataset[0]),"3", "5", "776", "1","3.45;3.1;39.5;37.5","","-4", "0.1e4","10;40"],\
+["Data Directory","InPhase ExpNo ", "AntiPhase ExpNo", "New ExpNo ", "First ProcNo ", "Chemical shift(s) in ppm","Comment (Title)", "nc_proc","Detection threshold","Points Shifting"], [str(current_dataset[0]),"", "", "999", "1","0;0;0;0","","-4", "0.1e4","10;40"],\
 ["","","","ExpNo that will contain the resulting spectra","First ProcNo. The following ones will be incremented automatically","max(F2);min(F2);max(F1);min(F1)  // Leave zeros for full spectrum","Any comment(s) that should be added to the title","nc proc parameters for visualization (default)","Threshold for peak picking (default)","Number of points for box selection (default)"], ["1", "1", "1", "1","1"])
 
 if len(inputs[0]) == 0 or len(inputs[1]) == 0:
