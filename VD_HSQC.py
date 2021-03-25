@@ -248,7 +248,7 @@ Dummy_DataSet       = dummy_expno                 #5
 Dummy_procno        = dummy_procno                #6
 
 print("Start Analysis Script")
-cmd = tr(os.path.normpath(options["python_path"]))+" "+str(Analysis_Script_Path)+" %s %s %s %s %s %s %s %s %s %s %s %s %s"  % (Path, Data_Folder, InPhase_DataSet, AntiPhase_DataSet, Dummy_DataSet, Dummy_procno, Wdw_ppm[0], Wdw_ppm[1], Wdw_ppm[2], Wdw_ppm[3], pp_th, Box_pts[0], Box_pts[1])
+cmd = str(os.path.normpath(options["python_path"]))+" "+str(Analysis_Script_Path)+" %s %s %s %s %s %s %s %s %s %s %s %s %s"  % (Path, Data_Folder, InPhase_DataSet, AntiPhase_DataSet, Dummy_DataSet, Dummy_procno, Wdw_ppm[0], Wdw_ppm[1], Wdw_ppm[2], Wdw_ppm[3], pp_th, Box_pts[0], Box_pts[1])
 subprocess.Popen(cmd, shell=True).wait()
 print('End Analysis Script')
 EXIT()
