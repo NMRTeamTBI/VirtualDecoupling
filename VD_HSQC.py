@@ -240,7 +240,7 @@ for k, (ExpName, dest_procno, src_procno) in enumerate([
     f.write(txt)
     f.close()
 
-Path                = str(current_dataset[3])     #1
+Path                = str(os.path.normpath(current_dataset[3]))     #1
 Data_Folder         = str(inputs[0])              #2
 InPhase_DataSet     = expno_InPhase               #3
 AntiPhase_DataSet   = expno_AntiPhase             #4  
