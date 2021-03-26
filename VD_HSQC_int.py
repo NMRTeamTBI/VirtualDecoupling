@@ -1,7 +1,8 @@
 import os, sys, importlib
 from tkinter import * #required.
 from tkinter import messagebox #for messagebox.
-
+import tkinter.font as tkFont
+import tkinter as tk
 ################################################################
 # Test for missing librairies 
 ################################################################
@@ -15,21 +16,16 @@ if sys.argv[1] == "test":
             txt += "\nLibrary installed : "+str(modname) 
         except ImportError as e:
             main = Tk()
+            main.title("Error")
             str_var = StringVar()
+            def_font = tk.font.nametofont("TkDefaultFont")
+            def_font.config(size=16)
             #Message Function
             label = Message( main, textvariable=str_var, 
                 relief=RAISED,width=200)
-   
-            # The size of the text determines
-            # the size of the messagebox
             str_var.set(str(modname)+" is missing") 
             label.pack()
             main.mainloop()
-
-            # App = Tk() #required.
-            # App.withdraw() #for hide window.
-            
-            # messagebox.showerror("Error", "Hello World!")
             txt += "\nLibrary missing : "+str(modname) 
     libf = open(libfn, 'w')
     libf.write(txt)
@@ -42,11 +38,9 @@ import nmrglue as ng
 import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
-import tkinter as tk
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from tqdm import tqdm
-from tkinter import *
 
 
 # https://stackoverflow.com/questions/58367251/how-can-i-store-the-data-of-my-tkinter-entries-into-a-dataframe-to-later-export
@@ -79,20 +73,41 @@ def Extract_NMR_Spectra_Bruker(
         )
     if spec_lim == [0,0,0,0]:
         _data = scaled_data
-
-    else:
+    else: 
         udic = ng.bruker.guess_udic(dic,data)
         uc_F1 = ng.fileiobase.uc_from_udic(udic, 0)
         uc_F2 = ng.fileiobase.uc_from_udic(udic, 1)
         ppm_scale_F2 = uc_F2.ppm_scale()
         ppm_scale_F1 = uc_F1.ppm_scale()
-        idx_x0_F2, x0_F2 = find_nearest(ppm_scale_F2,spec_lim[0])
-        idx_x1_F2, x1_F2 = find_nearest(ppm_scale_F2,spec_lim[1])
-        idx_y0_F1, y0_F1 = find_nearest(ppm_scale_F1,spec_lim[2])
-        idx_y1_F1, y1_F1 = find_nearest(ppm_scale_F1,spec_lim[3])
-        _data = np.zeros((data.shape[0],data.shape[1]))
-        data_ext = scaled_data[idx_y0_F1:idx_y1_F1,idx_x0_F2:idx_x1_F2]
-        _data[idx_y0_F1:idx_y1_F1,idx_x0_F2:idx_x1_F2] = data_ext
+        
+        if (min(ppm_scale_F2) <= spec_lim[0] <= max(ppm_scale_F2)) and \
+            (min(ppm_scale_F2) <= spec_lim[1] <= max(ppm_scale_F2)) and \
+             (min(ppm_scale_F1) <= spec_lim[2] <= max(ppm_scale_F1)) and \
+              (min(ppm_scale_F1) <= spec_lim[3] <= max(ppm_scale_F1)): 
+    
+            idx_x0_F2, x0_F2 = find_nearest(ppm_scale_F2,spec_lim[0])
+            idx_x1_F2, x1_F2 = find_nearest(ppm_scale_F2,spec_lim[1])
+            idx_y0_F1, y0_F1 = find_nearest(ppm_scale_F1,spec_lim[2])
+            idx_y1_F1, y1_F1 = find_nearest(ppm_scale_F1,spec_lim[3])
+            _data = np.zeros((data.shape[0],data.shape[1]))
+            data_ext = scaled_data[idx_y0_F1:idx_y1_F1,idx_x0_F2:idx_x1_F2]
+            _data[idx_y0_F1:idx_y1_F1,idx_x0_F2:idx_x1_F2] = data_ext
+
+        else:
+            main = Tk()
+            main.title("Error")
+            
+            str_var = StringVar()
+            #Message Function
+            label = Message( main, textvariable=str_var, 
+                relief=RAISED,width=400,foreground='red')
+            def_font = tk.font.nametofont("TkDefaultFont")
+            def_font.config(size=16)
+
+            str_var.set("At least one of the intial chemical shift values is out of or range") 
+            label.pack()
+            main.mainloop()
+            exit()
 
     return _data, dic
 
@@ -374,7 +389,7 @@ for i, (DataSet, ProcNo_In, ProcNo_Out) in enumerate(tqdm([
             pdata_folder=ProcNo_Out,       
             write_procs=False)
 ################################################################
-
+exit()
 ################################################################
 # Performing peak picking 
 ################################################################
