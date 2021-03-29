@@ -127,7 +127,9 @@ inputs = INPUT_DIALOG("Virtual Decoupling",\
 ["Data Directory","InPhase ExpNo ", "AntiPhase ExpNo", "New ExpNo ", "First ProcNo ", "Chemical shift(s) in ppm","Comment (Title)", "nc_proc","Detection threshold","Points Shifting"], [str(current_dataset[0]),"", "", "999", "1","0;0;0;0","","-4", "0.1e4","10;40"],\
 ["","","","ExpNo that will contain the resulting spectra","First ProcNo. The following ones will be incremented automatically","max(F2);min(F2);max(F1);min(F1)  // Leave zeros for full spectrum","Any comment(s) that should be added to the title","nc proc parameters for visualization (default)","Threshold for peak picking (default)","Number of points for box selection (default)"], ["1", "1", "1", "1","1"])
 
-if len(inputs[0]) == 0 or len(inputs[1]) == 0:
+if inputs is None:    
+    EXIT()
+elif len(inputs[0]) == 0 or len(inputs[1]) == 0:
     ERRMSG(message = "Please provide the expnos for the InPhase and AntiPhase experiments ", title="Error", details=None, modal=1)
 else:
     expno_InPhase = int(inputs[1])
