@@ -131,6 +131,7 @@ if inputs is None:
     EXIT()
 elif len(inputs[0]) == 0 or len(inputs[1]) == 0:
     ERRMSG(message = "Please provide the expnos for the InPhase and AntiPhase experiments ", title="Error", details=None, modal=1)
+    EXIT()
 else:
     expno_InPhase = int(inputs[1])
     expno_AntiPhase = int(inputs[2])
