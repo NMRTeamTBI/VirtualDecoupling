@@ -389,7 +389,7 @@ for i, (DataSet, ProcNo_In, ProcNo_Out) in enumerate(tqdm([
             pdata_folder=ProcNo_Out,       
             write_procs=False)
 ################################################################
-exit()
+
 ################################################################
 # Performing peak picking 
 ################################################################
