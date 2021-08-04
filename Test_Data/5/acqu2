@@ -1,0 +1,28 @@
+##TITLE= Parameter file, TopSpin 3.6.2
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 4	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= ead17
+$$ 2021-02-12 16:49:15.663 +0100  ead17@CZC02583BQ
+$$ /opt/nmrdata/data/ead17/nmr/8NC_moules_1.7mm/5/acqu2
+$$ process /opt/topspin3.6.2/prog/mod/dataserver
+##$ACQT0= 0
+##$BF1= 201.192849
+##$DE= 15.53143
+##$DECIM= 1
+##$DR= 16
+##$FW= 25200
+##$FnILOOP= 0
+##$FnMODE= 6
+##$NUC1= <13C>
+##$NusJSP= 0
+##$NusT2= 1
+##$NusTD= 0
+##$O1= 12071.5709400088
+##$ProjAngle= 0
+##$SFO1= 201.20492057094
+##$SW= 100.000000648125
+##$SW_h= 20120.4921875
+##$TD= 256
+##END=

@@ -1,0 +1,16 @@
+##TITLE= Parameter file, TopSpin 3.6.2
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 1	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= ead17
+$$ 2021-02-12 16:13:47.345 +0100  ead17@CZC02583BQ
+$$ /opt/nmrdata/data/ead17/nmr/8NC_moules_1.7mm/3/pdata/1/outd
+$$ process /opt/topspin3.6.2/prog/mod/dirdata
+##$CURPLOT= <HP_Color_LaserJet_2840@10.20.26.5>
+##$CURPRIN= <$HP_Color_LaserJet_2840@10.20.26.5>
+##$DFORMAT= <normdp>
+##$LAYOUT= <+/1D_H.xwp>
+##$LFORMAT= <normlp>
+##$PFORMAT= <normpl>
+##END=

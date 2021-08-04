@@ -1,0 +1,11 @@
+##TITLE= Parameter file, TopSpin 4.0.8
+##JCAMPDX= 5.0
+##DATATYPE= Parameter Values
+##NPOINTS= 8	$$ modification sequence number
+##ORIGIN= Bruker BioSpin GmbH
+##OWNER= ead17
+$$ 2021-03-08 16:39:46.238 +0100  cyrilcharlier@Cyrils-MacBook-Pro.local
+$$ /opt/topspin4.0.8/data/8NC_moules_1.7mm/3/pdata/1/assocs
+$$ process /opt/topspin4.0.8/prog/mod/dataserver
+##$MULTDISP= </opt/topspin4.0.8/data/ZebraMussel/10224/pdata/129>
+##END=
